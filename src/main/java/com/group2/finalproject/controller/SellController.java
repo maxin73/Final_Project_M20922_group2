@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.group2.finalproject.dao.iSellRepository;
-import com.group2.finalproject.entity.Sell;
+import com.group2.finalproject.entity.item_table;
 
 @Controller
 @RequestMapping("/sell")
@@ -19,12 +19,12 @@ public class SellController {
 
   @GetMapping("/new")
   public String displaySellForm(Model model){
-    model.addAttribute("sell", new Sell());
+    model.addAttribute("sell", new item_table());
     return "sell/new-sell";
   }
 
   @PostMapping("/save")
-  public String registerItem(Sell sell, Model mode){
+  public String registerItem(item_table sell, Model mode){
     sellRepository.save(sell);
     return "redirect:/sell/new";
   }

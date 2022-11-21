@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Sell {
+public class item_table {
   
   //Fields
   @Id
@@ -20,10 +20,10 @@ public class Sell {
 
 
   //Constructor
-  public Sell (){
+  public item_table (){
   }
 
-  public Sell(String itemName, int price, String itemDescription) {
+  public item_table(String itemName, int price, String itemDescription) {
     this.itemName = itemName;
     this.price = price;
     this.itemDescription = itemDescription;
