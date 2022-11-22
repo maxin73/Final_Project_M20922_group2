@@ -1,5 +1,7 @@
 package com.group2.finalproject.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,10 +25,19 @@ public class SellController {
     return "sell/new-sell";
   }
 
+  @GetMapping("/")
+  public String displayHome(Model model){
+    List<Sell> items = sellRepository.findAll();
+    model.addAttribute("items", items);
+    return "top/index";
+  }
+
   @PostMapping("/save")
   public String registerItem(Sell sell, Model mode){
     sellRepository.save(sell);
-    return "redirect:/sell/new";
+    return "redirect:/";
   }
+
+
 
 }
