@@ -12,10 +12,10 @@ public class SearchService {
   @Autowired
   private iSearchRepository iHomeRepository;
 
-  public Search findOne(String genre){
+  public Search find(String genre){
 
     //search one element
-      Map<String, Object> map = iHomeRepository.findOne(genre);
+      Map<String, Object> map = iHomeRepository.find(genre);
 
     //get data from Map
       String itemName = (String)map.get("item_name");

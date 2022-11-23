@@ -11,7 +11,7 @@ public class iSearchRepository {
     @Autowired
     private JdbcTemplate searchFunction;
 
-    public Map<String, Object> findOne(String genre){
+    public Map<String, Object> find(String genre){
       
       //SELECT
       String query = "SELECT "
