@@ -13,8 +13,10 @@ import com.group2.finalproject.entity.Sell;
 @Controller
 public class HomeController {
   
+
   @Autowired
   iSellRepository sellRepository;
+
 
   @GetMapping("/")
   public String displayHome(Model model){
