@@ -17,7 +17,7 @@ public class Sell {
   private String itemName;
   private int price;
   private String itemDescription;
-  //private String image;
+  private String genre;
 
 
   //Constructor
@@ -28,6 +28,7 @@ public class Sell {
     this.itemName = itemName;
     this.price = price;
     this.itemDescription = itemDescription;
+    this.genre = genre;
   }
 
 
@@ -64,4 +65,11 @@ public class Sell {
     this.itemDescription = itemDescription;
   }
 
+  public String getGenre() {
+    return genre;
+  }
+
+  public void setGenre(String genre) {
+    this.genre = genre;
+  }
 }

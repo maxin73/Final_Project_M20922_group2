@@ -40,12 +40,21 @@ public class HomeController {
         Search search = searchService.find(str);
 
         //register search result to Model
-        model.addAttribute("itemName", search.getItemName());
         model.addAttribute("price", search.getPrice());
         model.addAttribute("itemDescription", search.getItemDescription());
 
+        if(search.getItemName() != null){
+          model.addAttribute("itemName", search.getItemName());
+        } else if (search.getItemName() == null){
+          return "Product not found";
+        }
+
+        
+        
         //move to searchDB.html
         return "/search/responseDB";
+
+      
   
     }
 

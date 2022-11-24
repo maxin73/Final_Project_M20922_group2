@@ -4,7 +4,7 @@
   
 </head>
 
-<body class="d-flex h-100 text-center text-bg-dark">
+<body>
 
   <br>
   <div class="container">
@@ -28,6 +28,15 @@
             class="form-control"
             type="number"
             th:field="${sell.price}"/>
+        </div>
+
+        <div class="form-group mb-3">
+          <label class="mb-3">Genre: </label>
+          <br>
+          <input 
+            class="form-control"
+            type="text"
+            th:field="${sell.genre}"/>
         </div>
 
         <div class="form-group mb-3">
