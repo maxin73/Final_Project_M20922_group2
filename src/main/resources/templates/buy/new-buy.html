@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="layout :: head(pageTitle='New Project')">
+</head>
+
+<body>
+  <nav th:replace="layout :: nav"></nav> 
+    <div class="container">
+        <form action="/buy/save" method="POST" th:object="${Buy}">
+            <fieldset>
+                <legend>Buy</legend>
+
+                <div class="form-group mb-2"> 
+                    <label class="mb-2">Name: </label>
+                    <br>
+                    <input class="form-control" type="text" th:field="${buy.buyItemName}"/>
+                </div>
+
+                <div class="form-group mb-2">
+                    <label class="mb-2">Price: </label>
+                    <br>
+                    <select class="form-control" th:field="${buy.buyItemPrice}">
+                        <option th:value="CANCELLED">CANCELLED</option>
+                        <option th:value="COMPLETED">COMPLETED</option>
+                        <option th:value="IN-PROGRESS">IN-PROGRESS</option>
+                    </select>
+                </div>
+
+                <div class="form-group mb-2">
+                    <label class="mb-2">Description: </label>
+                    <br>
+                    <textarea class="form-control" th:field="${buy.buyItemDescription}"/>
+                </div> 
+                <button type="submit" class="btn btn-dark mt-3">Buy</button>
+            </fieldset> 
+        </form>
+    </div> 
+    
+</body>
+</html>
