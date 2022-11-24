@@ -23,17 +23,15 @@
                             <th>Item Description</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr th:each="item: ${items}">
-                        <th></th>
-                        <!-- <th th:text="${item.image}"></th> -->
-                        <th th:text="${item.itemName}"></th>
-                        <th th:text="${item.price}"></th>
-                        <th th:text="${item.itemDescription}"></th>
-                    </tr>
+               <tbody>
+                <tr th:each="${sell}">
+                    <th th:text=" ${sell.itemName"></th>
+                    <th th:text=" ${sell.price"></th>
+                    <th th:text=" ${sell.itemDescription"></th>
 
+                </tr>
 
-                </tbody>
+               </tbody>
             </table>
 
 

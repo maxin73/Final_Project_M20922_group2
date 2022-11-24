@@ -50,8 +50,6 @@ public class HomeController {
           return "Product not found";
         }
 
-        
-        
         //move to searchDB.html
         return "/search/responseDB";
 
