@@ -1,45 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-<head th:replace="layout" :: "head">
-</head>
+<head th:replace="layout" :: head>
+<meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
 
-<body>
-    <div class="container">
-        <div class="jumbotron">
-            <h1 class="display-4">Enjoy your shopping 🕺</h1>
-            <p class="lead">You can also sell your item from "Selling Item" on the menu bar.</p>
-            <hr class="my-4">
+    </head>
+<body> 
+    <div class="jumbotron text-center bg-dark">
+        <br>
+            <h1 class="bg-dark.bg-gradient text-white">Enjoy your shopping 🕺</h1>
+            <p class="lead text-white-50">You can also sell your item from "Selling Item" on the menu bar.</p>
             </p>
-
-            <h4>New Items</h4>
+        <br>
+        </div>
+        <br>
+        <div class="container">
+            <h2>New Items</h2>
             <hr>
 
-            <table class="table table-borderd table-striped">
-                <thead class="thead-dark">
-                    <tr>
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Item Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="item: ${items}">
-                        <th></th>
-                        <!-- <th th:text="${item.image}"></th> -->
-                        <th th:text="${item.itemName}"></th>
-                        <th th:text="${item.price}"></th>
-                        <th th:text="${item.itemDescription}"></th>
-                    </tr>
+            <div class="container text-center">
+                <div class="row text-white">
 
 
-                </tbody>
-            </table>
+                <div class="col">
+                    <div class="card bg-dark Max-height 100%">
+                        <br>
+                        <br>
+                        <small>genre</small>
+                        <h5 class="card-title fs-1 text align-items-start">"${item.itemName}"</h5>
+                        <img src="https://p1-ofp.static.pub/medias/24303710136_82svclogy_202203080513271666322820989.png" class="card-img-top" alt="Image">
+                        <h3>"${item.price}"</h3>
+                        <div class="card-body">
+                        <p class="card-text fs-6">"${item.itemDescription}"</p>
+                        <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
 
 
-        </div>
 
+                <div class="col">
+                    <div class="card bg-dark Max-height 100%">
+                        <br>
+                        <br>
+                        <small>genre</small>
+                        <h5 class="card-title fs-1 text align-items-start">Name</h5>
+                        <img src="https://p1-ofp.static.pub/medias/24303710136_82svclogy_202203080513271666322820989.png" class="card-img-top" alt="Image">
+                        <h3>price</h3>
+                        <div class="card-body">
+                        <p class="card-text fs-6">Item Description</p>
+                        <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col">
+                    <div class="card bg-dark Max-height 100%">
+                        <br>
+                        <br>
+                        <small>genre</small>
+                        <h5 class="card-title fs-1 text align-items-start">Name</h5>
+                        <img src="https://p1-ofp.static.pub/medias/24303710136_82svclogy_202203080513271666322820989.png" class="card-img-top" alt="Image">
+                        <h3>price</h3>
+                        <div class="card-body">
+                        <p class="card-text fs-6">Item Description</p>
+                        <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <br>
+            <br>
+
+
+        <div class="container text-center">
+            <div class="row text-white">
+            <div class="col">
+                <div class="card bg-dark Max-height 100%">
+                    <br>
+                    <br>
+                    <small>genre</small>
+                    <h5 class="card-title fs-1 text align-items-start">Name</h5>
+                    <img src="https://p1-ofp.static.pub/medias/24303710136_82svclogy_202203080513271666322820989.png" class="card-img-top" alt="Image">
+                    <h3>price</h3>
+                    <div class="card-body">
+                    <p class="card-text fs-6">Item Description</p>
+                    <a href="#" class="btn btn-primary">Buy</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+                <div class="col">
+                    <div class="card bg-dark Max-height 100%">
+                        <br>
+                        <br>
+                        <small>genre</small>
+                        <h5 class="card-title fs-1 text align-items-start">Name</h5>
+                        <img src="https://p1-ofp.static.pub/medias/24303710136_82svclogy_202203080513271666322820989.png" class="card-img-top" alt="Image">
+                        <h3>price</h3>
+                        <div class="card-body">
+                        <p class="card-text fs-6">Item Description</p>
+                        <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card bg-dark Max-height 100%">
+                        <br>
+                        <br>
+                        <small>genre</small>
+                        <h5 class="card-title fs-1 text align-items-start">Name</h5>
+                        <img src="https://p1-ofp.static.pub/medias/24303710136_82svclogy_202203080513271666322820989.png" class="card-img-top" alt="Image">
+                        <h3>price</h3>
+                        <div class="card-body">
+                        <p class="card-text fs-6">Item Description</p>
+                        <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                </div>
+            </div>
+
+
+                </div>
+            </div>
 
     </div>
 </body>
+
+<div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <p class="col-md-4 mb-0 text-muted">© 2022 Company, Inc</p>
+
+    <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+    </a>
+    </footer>
+</div>
+
 </html>
+
+
+
+
