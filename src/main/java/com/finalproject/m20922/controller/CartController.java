@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.finalproject.m20922.dao.iBuyRepository;
 import com.finalproject.m20922.entity.Buy;
@@ -26,9 +27,9 @@ public class CartController {
         model.addAttribute("buys", buys); 
         return "cart/new-cart"; 
     }
-    @GetMapping("/delete/{buyItemId}")
-    public String deleteCart(@PathVariable Long buyItemId){
-        buyRepository.deleteById(buyItemId);
+    @GetMapping("/delete/")
+    public String deleteCart(@RequestParam(name="id") Long Id){
+        buyRepository.deleteById(Id);
         return "redirect:/cart/new";
 
 

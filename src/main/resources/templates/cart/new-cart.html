@@ -6,52 +6,39 @@
     <nav th:replace="layout :: nav"></nav>
 
     <div class="container">
-          <div class="jumbotron">
+        <div class="jumbotron">
             <div>
                 <h1 class="display-4">Shopping Cart</h1>
             </div>
-          </div>
+        </div>
 
-          <hr>
-          <h4></h4>
-          <hr>
+        <hr>
+        <h4></h4>
+        <hr>
 
-          <table class="table table-bordered table-striped">
+        <table class="table table-bordered table-striped">
             <thead class="thead-dark">
                 <tr>
                     <th>Item</th>
                     <th>Price</th>
                     <th>Description</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="buys: ${buys}">
-                    <th th:text="${buys.buyItemName}"></th>
-                    <th th:text="${buys.buyItemPrice}"></th>
-                    <th th:text="${buys.buyItemDescription}"></th>
-                    <th>
-                <!-- <a th:href=“@{/cart/delete/{buyItemId}(buyItemId=${buys.buyItemId})}” class=“btn btn-danger col-5 m-1 btn-sm”>Delete</a> -->
-                <button
-                id=“delete”
-                type=“button”
-                class=“btn”
-                onclick="location.href='/cart/delete'">
-                Delete</button></th>
+                <tr th:each="buy: ${buys}">
+                    <td th:text="${buy.buyItemName}"></td>
+                    <td th:text="${buy.buyItemPrice}"></td>
+                    <td th:text="${buy.buyItemDescription}"></td>
+                    <td><button
+                    id=“delete”
+                    type=“button”
+                    class=“btn”
+                    th:attr="onclick='location.href=\'/cart/delete/?id=' + ${buy.buyItemId} + '\''">
+                    Delete</button></td>
                 </tr>
             </tbody> 
-          </table>
-          </table>
-          <table>
-            <tr th:each="book : ${bookList}" th:object="${buys}">
-                <td th:text="*{buyItemId}"></td>
-                <td th:text="*{buyItemName}"></td>
-                <td th:text="*{buyItemPrice}"></td>
-                <td th:text="*{buyItemDescription}"></td>
-                
-            </tr>
-              
         </table>
-       
 
     </div>
     
