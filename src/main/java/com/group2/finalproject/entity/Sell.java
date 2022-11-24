@@ -24,7 +24,7 @@ public class Sell {
   public Sell (){
   }
 
-  public Sell(String itemName, int price, String itemDescription) {
+  public Sell(String itemName, int price, String itemDescription, String genre) {
     this.itemName = itemName;
     this.price = price;
     this.itemDescription = itemDescription;

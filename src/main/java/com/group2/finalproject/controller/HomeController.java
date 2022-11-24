@@ -16,7 +16,6 @@ import com.group2.finalproject.entity.Sell;
 
 @Controller
 public class HomeController {
-  
 
   @Autowired
   iSellRepository sellRepository;
@@ -24,12 +23,17 @@ public class HomeController {
   @Autowired
   private SearchService searchService;
 
-
   @GetMapping("/")
   public String displayHome(Model model){
     List<Sell> items = sellRepository.findAll();
     model.addAttribute("items", items);
     return "top/index";
+    }
+
+  @GetMapping("/delete/")
+    public String deleteCart(@RequestParam(name="id") Long Id){
+        sellRepository.deleteById(Id);
+        return "redirect:/";
     }
 
   //process for POST(DB)
@@ -48,15 +52,11 @@ public class HomeController {
         } else if (search.getItemName() == null){
           return "Product not found";
         }
-
-        
         
         //move to searchDB.html
         return "/search/responseDB";
 
-      
-  
     }
-
-  }
-
+    // @GetMapping("/error")
+    // return "Sorry, something went wrong"
+    }
