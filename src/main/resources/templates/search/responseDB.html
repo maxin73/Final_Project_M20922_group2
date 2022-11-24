@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="layout" :: "head">
+</head>
+
+<body>
+  <h1>Search Result DB</h1>
+  <table>
+    <tr>
+      <td>Item Name: </td><td th:text="${itemName}"></td>
+    </tr>
+    <tr>
+      <td>Price: </td><td th:text="${price}"></td>
+    </tr>
+    <tr>
+      <td>Item Description: </td><td th:text="${itemDescription}"></td>
+    </tr>
+  </table>
+</body>
+</html>
