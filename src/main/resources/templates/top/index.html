@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="layout" :: "head">
+</head>
+
+<body>
+    <div class="jumbotron text-center bg-dark">
+        <br>
+            <h1 class="bg-dark.bg-gradient text-white">Enjoy your shopping </h1>
+            <p class="lead text-white-50">You can also sell your item from "Selling Item" on the menu bar.</p>
+            </p>
+        <br>
+    </div>
+    <div class="container">
+            <br>
+            <br>
+            <h4>New Items</h4>
+            <hr>
+
+            <table class="table table-borderd table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Item Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="item: ${items}">
+                        <td th:text="${item.itemName}"></td>
+                        <td th:text="${item.price}"></td>
+                        <td th:text="${item.itemDescription}"></td>
+                        <td><button
+                            id=“delete”
+                            type=“button”
+                            class=“btn”
+                            th:attr="onclick='location.href=\'/delete/?id=' + ${item.id} + '\''">
+                            Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+</body>
+</html>

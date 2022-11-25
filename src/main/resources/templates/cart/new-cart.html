@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="layout" :: "head"> 
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+                <h1 class="display-4">Shopping Cart</h1>
+                <p class="lead">Click "BUY" button to purchase items.</p>
+                <hr class="my-4">
+
+        </div>
+
+
+            <table class="table table-borderd table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="buy: ${buys}">
+                    <td th:text="${buy.itemName}"></td>
+                    <td th:text="${buy.price}"></td>
+                    <td th:text="${buy.itemDescription}"></td>
+                    <td><button
+                        id=“delete”
+                        type=“button”
+                        class=“btn”
+                        th:attr="onclick='location.href=\'/cart/delete/?id=' + ${buy.id} + '\''">
+                        Delete</button></td>
+                </tr>
+            </tbody> 
+        </table>
+
+    </div>
+    
+</body>
+</html>
